@@ -2,17 +2,17 @@
 
 
 Заметки:
-npm i -D hardhat
-npm i web3
-npm i @openzeppelin/contracts
-npm i -D dotenv
-npm i @nomicfoundation/hardhat-toolbox
-npm i @nomiclabs/hardhat-etherscan
+- npm i -D hardhat
+- npm i web3
+- npm i @openzeppelin/contracts
+- npm i -D dotenv
+- npm i @nomicfoundation/hardhat-toolbox
+- npm i @nomiclabs/hardhat-etherscan
 
-npx hardhat clean
-npx hardhat compile
+- npx hardhat clean
+- npx hardhat compile
 
-начислить себе ETH - https://rinkebyfaucet.com http://joxi.ru/4AkdvROtjZBwdr
+- начислить себе ETH - https://rinkebyfaucet.com http://joxi.ru/4AkdvROtjZBwdr
 
 1. npx hardhat run scripts/deployTestNFT.js --network rinkeby
 2. получаем id контракта
