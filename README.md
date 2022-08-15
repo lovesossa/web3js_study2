@@ -1,16 +1,17 @@
 **https://docs.google.com/document/d/1fpm8Ss5ZwN9sCi8Xj26q7-vdultOlzPyat1U3cOaxgg/edit#heading=h.3g0hbyopqpz2**
-**Заметки:**
 
+
+Заметки:
 npm i -D hardhat
 npm i web3
 npm i @openzeppelin/contracts
 npm i -D dotenv
 npm i @nomicfoundation/hardhat-toolbox
 npm i @nomiclabs/hardhat-etherscan
------------
+
 npx hardhat clean
 npx hardhat compile
------
+
 начислить себе ETH - https://rinkebyfaucet.com http://joxi.ru/4AkdvROtjZBwdr
 
 1. npx hardhat run scripts/deployTestNFT.js --network rinkeby
