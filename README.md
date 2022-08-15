@@ -1,4 +1,4 @@
-**https://docs.google.com/document/d/1fpm8Ss5ZwN9sCi8Xj26q7-vdultOlzPyat1U3cOaxgg/edit#heading=h.3g0hbyopqpz2**
+**https://docs.google.com/document/d/1rsK0Ps-RkJrJPteY7gbvcUkGszvWmg0No-XUBF766Nk/edit?usp=sharing**
 
 
 Заметки:
