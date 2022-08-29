@@ -12,11 +12,26 @@ function App() {
   const handleConnectAccount = async () => {
     if (!window.ethereum) return;
 
-    const res = await window.ethereum.request({ // запрашиваем id кошелька
-      method: "eth_requestAccounts",
-    });
+    try {
+      const switchChain = await window.ethereum.request({
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: '0x4' }],
+      });
+    } catch (err) {
+      if (err.code === 4902) {
+        window.alert('Ваш должен быть кошелек в тестовой сети Rinkeby');
+      }
+    }
 
-    setAccounts(res);
+    try {
+      const res2 = await window.ethereum.request({ // запрашиваем id кошелька
+        method: "eth_requestAccounts",
+      });
+
+      setAccounts(res2);
+    } catch (err) {
+      window.alert('Пожалуйста, подключите ваш кошелек');
+    }
 
     window.ethereum.on('accountsChanged', (accountsArray) => { // обновляем текущий кошелек, если юзер его изменил (в данном случае нет необходимости)
       setAccounts(accountsArray);
@@ -34,8 +49,11 @@ function App() {
       const response = await contract.mint(BigNumber.from(mintAmount), { // функция mint содержится в нашем контракте, она может называться как угодно. в нее мы передаем количество оплат, и стоимость в value
         value: ethers.utils.parseEther((0.02 * mintAmount).toString()),
       });
+
+      alert('Спасибо за покупку 😊')
       console.log(response); //!
     } catch (error) {
+      window.alert('На выбраном кошельке недостаточно средств 😢')
       console.log(error.message); //!
     }
   };
