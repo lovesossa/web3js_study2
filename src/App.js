@@ -10,7 +10,10 @@ function App() {
   const TestNFTContractAdress = "0xEE1D29166643102cAc3A8c25d14279EEE0DfA87D"; // Адрес контракта взят из rinkeby etherscan
 
   const handleConnectAccount = async () => {
-    if (!window.ethereum) return;
+    if (!window.ethereum) {
+      window.alert('Не удалось подключиться к MetaMask 😢')
+      return;
+    };
 
     try {
       const switchChain = await window.ethereum.request({
@@ -33,7 +36,7 @@ function App() {
       window.alert('Пожалуйста, подключите ваш кошелек');
     }
 
-    window.ethereum.on('accountsChanged', (accountsArray) => { // обновляем текущий кошелек, если юзер его изменил (в данном случае нет необходимости)
+    window.ethereum.on('accountsChanged', (accountsArray) => {
       setAccounts(accountsArray);
     });
   };
@@ -74,6 +77,7 @@ function App() {
         {!accounts[0]
           && <button type="button" onClick={handleConnectAccount}>Connect account</button>}
        </div>
+      {/* <button type="button" onClick={handleWithdraw}>Withdraw money</button> */}
       {accounts[0] ? (
         <>
           <div>
